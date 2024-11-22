@@ -1,0 +1,15 @@
+{
+  "name": "assign1eliav",
+  "version": "1.0.0",
+  "description": "First Assigment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "node": "^20.18.1"
+  }
+}
