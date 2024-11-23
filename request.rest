@@ -1,12 +1,14 @@
 GET http://localhost:3000
 
+###
 GET http://localhost:3000/posts
 
-GET http://localhost:3000/posts?ownerId=Roy
+###
+GET http://localhost:3000/posts?ownerId=Moshe
 
 ###
 
-GET http://localhost:3000/posts/6734b0c818a1cf8344804554
+GET http://localhost:3000/posts/674257e6f3e51135290f39ec
 
 ###
 
@@ -15,7 +17,7 @@ Content-Type: application/json
 
 {
 "title": "Hey",
-"ownerId": "Moshe",
+"ownerId": "Ido",
 "content": "This is a new post"
 }
 

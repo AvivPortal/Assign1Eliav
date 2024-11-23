@@ -1,10 +1,10 @@
 const PostModel = require("../models/posts_model");
 
 const getAllPosts = async (req, res) => {
-  const filter = req.query.owner;
+  const filter = req.query.ownerId;
   try {
     if (filter) {
-      const posts = await PostModel.find({ owner: filter });
+      const posts = await PostModel.find({ ownerId: filter });
       res.send(posts);
     } else {
       const posts = await PostModel.find();
@@ -24,6 +24,21 @@ const getPostById = async (req, res) => {
       res.send(post);
     } else {
       res.status(404).send("No result");
+    }
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
+
+const getPostByownerId = async (req, res) => {
+  const ownerId = req.params.ownerId; // Correctly access ownerId from req.params
+
+  try {
+    const posts = await PostModel.find({ ownerId: ownerId }); // Query by ownerId
+    if (posts.length > 0) {
+      res.send(posts);
+    } else {
+      res.status(404).send("No posts found for this owner");
     }
   } catch (error) {
     res.status(400).send(error.message);
@@ -66,4 +81,5 @@ module.exports = {
   //deletePost,
   updatePost,
   getPostById,
+  getPostByownerId,
 };
