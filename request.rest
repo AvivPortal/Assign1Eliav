@@ -1,1 +1,25 @@
 GET http://localhost:3000
+
+GET http://localhost:3000/posts
+
+GET http://localhost:3000/posts?ownerId=Roy
+
+###
+
+GET http://localhost:3000/posts/6734b0c818a1cf8344804554
+
+###
+
+POST http://localhost:3000/posts 
+Content-Type: application/json
+
+{
+"title": "Hey",
+"ownerId": "Moshe",
+"content": "This is a new post"
+}
+
+###
+
+DELETE http://localhost:3000/posts/6734b0c818a1cf8344804554
+
