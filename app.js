@@ -8,6 +8,9 @@ app.use(express.json());
 const postsRoute = require("./routes/posts_route");
 app.use("/posts", postsRoute);
 
+const commentsRoute = require("./routes/comments_route");
+app.use("/comments", commentsRoute);
+
 const mongoose = require("mongoose");
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;

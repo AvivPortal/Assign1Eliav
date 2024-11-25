@@ -1,4 +1,6 @@
 
+
+// Post API'S
 ###
 GET http://localhost:3000/posts
 
@@ -22,10 +24,44 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:3000/posts/6744d0aa205cfa5f8a9bca85
+PUT http://localhost:3000/posts/6744d0aa205cfa5f8a9bca87
 Content-Type: application/json
 
 {
   "title": "Updated Title",
   "content": "This is the updated content"
 }
+
+
+//Comment API'S
+
+###
+GET http://localhost:3000/comments
+
+###
+
+GET http://localhost:3000/comments/6744d0f7205cfa5f8a9bca87
+
+###
+
+POST http://localhost:3000/comments 
+Content-Type: application/json
+
+{
+"postId": "6744d0f7205cfa5f8a9bca87",
+"User": "Dor",
+"content": "test"
+}
+
+###
+
+PUT http://localhost:3000/comments/6744dd3941e8745b54c37e6d
+Content-Type: application/json
+
+{
+  "content": "This is the updated content"
+}
+
+###
+
+DELETE http://localhost:3000/comments/6744dd3941e8745b54c37e6d

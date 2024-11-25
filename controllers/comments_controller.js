@@ -15,6 +15,21 @@ const getAllComments = async (req, res) => {
   }
 };
 
+const getCommentbypostId = async (req, res) => {
+  const postId = req.params.id;
+
+  try {
+    const comment = await commentsModel.find({postId: postId});
+    if (comment) {
+      res.send(comment);
+    } else {
+      res.status(404).send("No result");
+    }
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
+
 const createComment = async (req, res) => {
     const commentBody = req.body;
     try {
@@ -60,4 +75,5 @@ module.exports = {
   createComment,
   deleteComment,
   updateComment,
+  getCommentbypostId,
 };

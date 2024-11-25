@@ -70,15 +70,10 @@ const updatePost = async (req, res) => {
     }
 };
 
-// const deletePost = (req, res) => {
-//   console.log("delete a post");
-//   res.send("delete a post");
-// };
 
 module.exports = {
   getAllPosts,
   createPost,
-  //deletePost,
   updatePost,
   getPostById,
   getPostBySender,
