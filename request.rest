@@ -1,14 +1,13 @@
-GET http://localhost:3000
 
 ###
 GET http://localhost:3000/posts
 
 ###
-GET http://localhost:3000/posts?ownerId=Moshe
+GET http://localhost:3000/posts?Sender=itzik
 
 ###
 
-GET http://localhost:3000/posts/674257e6f3e51135290f39ec
+GET http://localhost:3000/posts/6744d0aa205cfa5f8a9bca85
 
 ###
 
@@ -16,12 +15,17 @@ POST http://localhost:3000/posts
 Content-Type: application/json
 
 {
-"title": "Hey",
-"ownerId": "Ido",
-"content": "This is a new post"
+"title": "mr 3",
+"Sender": "meni",
+"content": "this project worth 100"
 }
 
 ###
 
-DELETE http://localhost:3000/posts/6734b0c818a1cf8344804554
+PUT http://localhost:3000/posts/6744d0aa205cfa5f8a9bca85
+Content-Type: application/json
 
+{
+  "title": "Updated Title",
+  "content": "This is the updated content"
+}

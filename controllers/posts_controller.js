@@ -1,10 +1,10 @@
 const PostModel = require("../models/posts_model");
 
 const getAllPosts = async (req, res) => {
-  const filter = req.query.ownerId;
+  const filter = req.query.Sender;
   try {
     if (filter) {
-      const posts = await PostModel.find({ ownerId: filter });
+      const posts = await PostModel.find({ Sender: filter });
       res.send(posts);
     } else {
       const posts = await PostModel.find();
@@ -30,11 +30,11 @@ const getPostById = async (req, res) => {
   }
 };
 
-const getPostByownerId = async (req, res) => {
-  const ownerId = req.params.ownerId; // Correctly access ownerId from req.params
+const getPostBySender = async (req, res) => {
+  const Sender = req.params.Sender; // Correctly access Sender from req.params
 
   try {
-    const posts = await PostModel.find({ ownerId: ownerId }); // Query by ownerId
+    const posts = await PostModel.find({ Sender: Sender }); // Query by Sender
     if (posts.length > 0) {
       res.send(posts);
     } else {
@@ -81,5 +81,5 @@ module.exports = {
   //deletePost,
   updatePost,
   getPostById,
-  getPostByownerId,
+  getPostBySender,
 };
